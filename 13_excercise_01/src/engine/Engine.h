@@ -8,6 +8,7 @@ namespace engine
 {
     class Engine
     {
+    public:
         Engine();
 
         void Shutdown();
