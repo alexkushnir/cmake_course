@@ -8,7 +8,7 @@ target_link_libraries(app core)
 target_link_libraries(app decorators)
 
 add_library(core Core.cpp)
-add_library(decorators Decorator.cpp)
+add_library(decorators SHARED Decorator.cpp)
 
 add_custom_target(print_report ALL
                   COMMAND sh -c "echo Custom target example>>report.txt"
