@@ -11,7 +11,7 @@ RUN apt-get update && \
     g++ make \
     gcc-13-arm-linux-gnueabi g++-13-arm-linux-gnueabi \
     pkg-config valgrind doxygen graphviz cppcheck \
-    protobuf-compiler libprotobuf-dev libpqxx-dev \
+    libboost-all-dev libpqxx-dev \
     clang-18 clang-tools-18 clang-format-18 clang-tidy-18 libclang-rt-18-dev\
     && rm -rf /var/lib/apt/lists/*
 
@@ -49,21 +49,7 @@ CMD ["/usr/sbin/sshd", "-D"]
 RUN git config --global http.sslVerify false
 RUN git clone https://github.com/alexkushnir/cmake_course.git /cmake_course
 
-# Install any necessary tools
-# RUN apt-get update && apt-get install -y \
-#    git \
-#    curl \
-#    build-essential \
-#	cmake \
-#	gcc-13-arm-linux-gnueabi \ 
-#	g++-13-arm-linux-gnueabi \
-#	graphviz \
-    # add more tools if needed
-#    && rm -rf /var/lib/apt/lists/*
 FROM devcontainer as examples
 COPY . /devuser
 WORKDIR /devuser/examples
 CMD ["/bin/bash"]
-
-# Set the default command to run when starting the container
-#CMD ["bash"]
