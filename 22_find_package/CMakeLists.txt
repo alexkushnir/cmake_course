@@ -2,7 +2,7 @@
 cmake_minimum_required(VERSION 3.28)
 project(find_package_example)
 set(CMAKE_CXX_STANDARD 23)
-set(Boost_VERBOSE)
+# set(Boost_VERBOSE)
 
 find_package(Boost REQUIRED ALL) 
 if (Boost_FOUND)
