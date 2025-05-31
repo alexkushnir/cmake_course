@@ -7,7 +7,7 @@ RUN apt-get update && \
     echo "deb [signed-by=/usr/share/keyrings/llvm-archive-keyring.gpg] http://apt.llvm.org/jammy/ llvm-toolchain-jammy-18 main" | tee /etc/apt/sources.list.d/llvm.list && \
     apt-get update && \
     apt-get install --no-install-recommends -y \
-    build-essential vim zsh tree git lcov gawk \
+    build-essential vim zsh tree git lcov gawk python-is-python3 python3-pip\
     g++ make \
     gcc-13-arm-linux-gnueabi g++-13-arm-linux-gnueabi \
     pkg-config valgrind doxygen graphviz cppcheck \
@@ -36,6 +36,10 @@ RUN cd /tmp && \
     rm -rf /tmp/ninja
 
 RUN chsh -s /bin/bash
+
+RUN pip install conan --break-system-packages
+RUN echo "export PATH=~/.local/bin:$PATH" >> ~/.bashrc
+# RUN ~/.local/bin/conan profile detect --force
 
 FROM build-env as devcontainer
 RUN apt-get update && apt-get install -y openssh-server sudo && rm -rf /var/lib/apt/lists/*
