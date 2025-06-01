@@ -107,7 +107,7 @@ After logging in, type the following:\
 ```cmake -S 01_intro/ -B build && cmake --build build && build/01_intro```
 
 If everything is fine, you should see something like that: \
-```-- The C compiler identification is GNU 14.2.0\
+```-- The C compiler identification is GNU 14.2.0 \
 -- The CXX compiler identification is GNU 14.2.0 \
 -- Detecting C compiler ABI info \
 -- Detecting C compiler ABI info - done\
