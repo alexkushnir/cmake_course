@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 3.28)
-# Set C++ standard to 23
-
+set(CMAKE_CXX_STANDARD 23)
 project(producerconsumer)
 
-# Add subdirectories
+add_subdirectory(engine)
+add_subdirectory(app)

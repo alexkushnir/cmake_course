@@ -16,7 +16,6 @@ namespace protocol
             FATAL, ERROR, WARNING, INFO, DEBUG, TRACE
         };
 
-        // explicit LogMessage(const LogSeverity severity, const std::string& message) noexcept;
         explicit LogMessage(const LogSeverity severity, const std::string& message) noexcept
             : m_severity{ severity }
             , m_message{ message}

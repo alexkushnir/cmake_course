@@ -1,5 +1,7 @@
 #include "Queue.h"
 
+using namespace std::chrono_literals;
+
 namespace engine
 {
     LogQueue::LogQueue()
@@ -15,13 +17,18 @@ namespace engine
         
     protocol::LogMessage LogQueue::Dequeue()
     {
-        m_readySemaphore.acquire();
+        if (m_readySemaphore.try_acquire_for(2s))
+        {
+            std::scoped_lock l(m_lock);
         
-        std::scoped_lock l(m_lock);
+            auto message = m_queue.front();
+            m_queue.pop();
         
-        auto message = m_queue.front();
-        m_queue.pop();
-        
-        return message;
+            return message;
+        }      
+        else
+        {
+            return protocol::LogMessage{ protocol::LogMessage::LogSeverity::FATAL, "Timeout occured!" };
+        }
     }
 }
