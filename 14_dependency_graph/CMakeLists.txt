@@ -1,8 +1,10 @@
+# to visualize dependencies - cmake --graphviz=filename.dot build
+
 cmake_minimum_required(VERSION 3.28)
 project(dependency_graph)
 set(CMAKE_CXX_STANDARD 23)
 
-# include(${CMAKE_SOURCE_DIR}/GraphViz.cmake)
+include(${CMAKE_SOURCE_DIR}/CMakeGraphVizOptions.cmake)
 
 add_executable(app App.cpp)
 
