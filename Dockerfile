@@ -1,11 +1,7 @@
 FROM ubuntu:latest AS build-env
 
 RUN apt-get update && \
-    apt-get install --no-install-recommends -y wget ca-certificates gnupg2 software-properties-common && \
-    wget -O - https://apt.llvm.org/llvm-snapshot.gpg.key | gpg --dearmor -o /usr/share/keyrings/llvm-archive-keyring.gpg && \
-    echo "deb [signed-by=/usr/share/keyrings/llvm-archive-keyring.gpg] http://apt.llvm.org/jammy/ llvm-toolchain-jammy-18 main" | tee /etc/apt/sources.list.d/llvm.list && \
-    apt-get update && \
-    apt-get install --no-install-recommends -y \
+    apt-get install --no-install-recommends -y wget ca-certificates gnupg2 software-properties-common \
     build-essential vim zsh tree git lcov gawk file gdb python-is-python3 python3-pip pipx\
     g++ make ninja-build cmake\
     gcc-13-arm-linux-gnueabi g++-13-arm-linux-gnueabi \
