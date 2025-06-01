@@ -1,7 +1,7 @@
 +++
 title = "CMake Workshop for Elbit-Elisra"
 +++
-
+  
 # About Me
 
 Hi! I'm Alex Kushnir, and I will be guiding you through this CMake workshop. This page will help you to get ready for our time together and will save us time to talk about really important things!
