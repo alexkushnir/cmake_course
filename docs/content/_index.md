@@ -108,6 +108,7 @@ After logging in, type the following:\
 ```cmake -S 01_intro/ -B build && cmake --build build && build/01_intro```
 
 If everything is fine, you should see something like that: \
+```
 -- The C compiler identification is GNU 14.2.0 \
 -- The CXX compiler identification is GNU 14.2.0 \
 -- Detecting C compiler ABI info \
@@ -126,6 +127,6 @@ If everything is fine, you should see something like that: \
 [ 50%] Building CXX object CMakeFiles/01_intro.dir/hello.cpp.o \
 [100%] Linking CXX executable 01_intro \
 [100%] Built target 01_intro 
- 
+ ```
 ```Hello, World! ```
 
