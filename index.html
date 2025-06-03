@@ -64,75 +64,85 @@ Let's get started!</p>
 </span><span>	- graphviz 
 </span><span>	- cppcheck 
 </span><span>	- libboost-all-dev 
-</span><span>	- libpqxx-dev ```
-</span><span>
-</span><span>	Full command:
-</span><span> `sudo apt-get update &amp;&amp; apt-get install --no-install-recommends -y wget ca-certificates gnupg2 software-properties-common build-essential vim zsh tree git lcov gawk file gdb python-is-python3 python3-pip pipx g++ make ninja-build cmake gcc-13-arm-linux-gnueabi g++-13-arm-linux-gnueabi pkg-config valgrind doxygen graphviz cppcheck libboost-all-dev libpqxx-dev`
-</span><span>	
-</span><span>- Add the &quot;universe&quot; apt repository by typing `add-apt-repository universe`
-</span><span>- Then, update the package index by typing `apt-get update`
-</span><span>	- Install gcc-14 and g++14
-</span><span>Full command: `add-apt-repository universe &amp;&amp; apt-get update &amp;&amp; apt-get install --no-install-recommends -y gcc-14 g++-14`
-</span><span>
-</span><span>- Set the default commands to point to the latest gcc and g++ versions 
-</span><span>	- `update-alternatives --install /usr/bin/arm-linux-gnueabi-gcc arm-linux-gnueabi-gcc /usr/bin/arm-linux-gnueabi-gcc-13 10`
-</span><span>	- `update-alternatives --install /usr/bin/arm-linux-gnueabi-g++ arm-linux-gnueabi-g++ /usr/bin/arm-linux-gnueabi-g++-13 10`
-</span><span>	- `update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-14 10`
-</span><span>	- `update-alternatives --install /usr/bin/g++ g++ /usr/bin/g++-14 10`
-</span><span>
-</span><span>- Install conan 
-</span><span>	- `pipx install conan `
-</span><span>	- `pipx ensurepath`
-</span><span>	- `conan profile detect --force`
-</span><span>
-</span><span># Support code for the Workshop
-</span><span>All code is stored in github repository [`https://github.com/alexkushnir/cmake_course`](https://github.com/alexkushnir/cmake_course)
-</span><span>
-</span><span># Docker Image Installation
-</span><span>
-</span><span>To get started quickly, use a pre-configured docker image in one of 2 ways:
-</span><span>
-</span><span>- Build the image locally using the Dockerfile from the github repo - [`https://github.com/alexkushnir/cmake_course/blob/master/Dockerfile`](https://github.com/alexkushnir/cmake_course/blob/master/Dockerfile)
-</span><span>	- `docker build -t cmake-workshop . ` (Assuming running from the same folder where the Dockerfile is)
-</span><span>	- `docker run -it --rm -v &lt;local-dir&gt;:/mnt cmake-workshop`
-</span><span>- Pull the image from Dockerhub
-</span><span>	- `docker pull alexkushnir1/cmake-workshop:latest`
-</span><span>	- `docker run -it --rm -v &lt;local-dir&gt;:/mnt alexkushnir1/cmake-workshop:latest`
-</span><span>
-</span><span>This image contains all necessary tools pre-installed.
-</span><span>
-</span><span>---
-</span><span>
-</span><span># Simple Testing Exercise
-</span><span>
-</span><span>Try the following simple exercise to test your setup:
-</span><span>After logging in, type the following:\
-</span><span>` git checkout work-in-progress # Temporary, in the end will move to the master branch` \
-</span><span>`cmake -S 01_intro/ -B build &amp;&amp; cmake --build build &amp;&amp; build/01_intro`
-</span><span>
-</span><span>If everything is fine, you should see something like that: \
+</span><span>	- libpqxx-dev
 </span></code></pre>
-<p>-- The C compiler identification is GNU 14.2.0 <br />
--- The CXX compiler identification is GNU 14.2.0 <br />
--- Detecting C compiler ABI info <br />
--- Detecting C compiler ABI info - done<br />
--- Check for working C compiler: /usr/bin/cc - skipped <br />
--- Detecting C compile features <br />
--- Detecting C compile features - done <br />
--- Detecting CXX compiler ABI info <br />
--- Detecting CXX compiler ABI info - done <br />
--- Check for working CXX compiler: /usr/bin/c++ - skipped <br />
--- Detecting CXX compile features <br />
--- Detecting CXX compile features - done <br />
--- Configuring done (0.5s) <br />
--- Generating done (0.0s) <br />
--- Build files have been written to: /devuser/build <br />
-[ 50%] Building CXX object CMakeFiles/01_intro.dir/hello.cpp.o <br />
-[100%] Linking CXX executable 01_intro <br />
-[100%] Built target 01_intro</p>
-<pre style="background-color:#2b303b;color:#c0c5ce;"><code><span>`Hello, World! `
-</span><span>
+<p>Full command:
+<code>sudo apt-get update &amp;&amp; apt-get install --no-install-recommends -y wget ca-certificates gnupg2 software-properties-common build-essential vim zsh tree git lcov gawk file gdb python-is-python3 python3-pip pipx g++ make ninja-build cmake gcc-13-arm-linux-gnueabi g++-13-arm-linux-gnueabi pkg-config valgrind doxygen graphviz cppcheck libboost-all-dev libpqxx-dev</code></p>
+<ul>
+<li>
+<p>Add the "universe" apt repository by typing <code>add-apt-repository universe</code></p>
+</li>
+<li>
+<p>Then, update the package index by typing <code>apt-get update</code></p>
+<ul>
+<li>Install gcc-14 and g++14
+Full command: <code>add-apt-repository universe &amp;&amp; apt-get update &amp;&amp; apt-get install --no-install-recommends -y gcc-14 g++-14</code></li>
+</ul>
+</li>
+<li>
+<p>Set the default commands to point to the latest gcc and g++ versions</p>
+<ul>
+<li><code>update-alternatives --install /usr/bin/arm-linux-gnueabi-gcc arm-linux-gnueabi-gcc /usr/bin/arm-linux-gnueabi-gcc-13 10</code></li>
+<li><code>update-alternatives --install /usr/bin/arm-linux-gnueabi-g++ arm-linux-gnueabi-g++ /usr/bin/arm-linux-gnueabi-g++-13 10</code></li>
+<li><code>update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-14 10</code></li>
+<li><code>update-alternatives --install /usr/bin/g++ g++ /usr/bin/g++-14 10</code></li>
+</ul>
+</li>
+<li>
+<p>Install conan</p>
+<ul>
+<li><code>pipx install conan </code></li>
+<li><code>pipx ensurepath</code></li>
+<li><code>conan profile detect --force</code></li>
+</ul>
+</li>
+</ul>
+<h1 id="support-code-for-the-workshop">Support code for the Workshop</h1>
+<p>All code is stored in github repository <a href="https://github.com/alexkushnir/cmake_course"><code>https://github.com/alexkushnir/cmake_course</code></a></p>
+<h1 id="docker-image-installation">Docker Image Installation</h1>
+<p>To get started quickly, use a pre-configured docker image in one of 2 ways:</p>
+<ul>
+<li>Build the image locally using the Dockerfile from the github repo - <a href="https://github.com/alexkushnir/cmake_course/blob/master/Dockerfile"><code>https://github.com/alexkushnir/cmake_course/blob/master/Dockerfile</code></a>
+<ul>
+<li><code>docker build -t cmake-workshop . </code> (Assuming running from the same folder where the Dockerfile is)</li>
+<li><code>docker run -it --rm -v &lt;local-dir&gt;:/mnt cmake-workshop</code></li>
+</ul>
+</li>
+<li>Pull the image from Dockerhub
+<ul>
+<li><code>docker pull alexkushnir1/cmake-workshop:latest</code></li>
+<li><code>docker run -it --rm -v &lt;local-dir&gt;:/mnt alexkushnir1/cmake-workshop:latest</code></li>
+</ul>
+</li>
+</ul>
+<p>This image contains all necessary tools pre-installed.</p>
+<hr />
+<h1 id="simple-testing-exercise">Simple Testing Exercise</h1>
+<p>Try the following simple exercise to test your setup:
+After logging in, type the following:<br />
+<code> git checkout work-in-progress # Temporary, in the end will move to the master branch</code> <br />
+<code>cmake -S 01_intro/ -B build &amp;&amp; cmake --build build &amp;&amp; build/01_intro</code></p>
+<p>If everything is fine, you should see something like that: \</p>
+<pre style="background-color:#2b303b;color:#c0c5ce;"><code><span>-- The C compiler identification is GNU 14.2.0 \
+</span><span>-- The CXX compiler identification is GNU 14.2.0 \
+</span><span>-- Detecting C compiler ABI info \
+</span><span>-- Detecting C compiler ABI info - done\
+</span><span>-- Check for working C compiler: /usr/bin/cc - skipped \
+</span><span>-- Detecting C compile features \
+</span><span>-- Detecting C compile features - done \
+</span><span>-- Detecting CXX compiler ABI info \
+</span><span>-- Detecting CXX compiler ABI info - done \
+</span><span>-- Check for working CXX compiler: /usr/bin/c++ - skipped \
+</span><span>-- Detecting CXX compile features \
+</span><span>-- Detecting CXX compile features - done \
+</span><span>-- Configuring done (0.5s) \
+</span><span>-- Generating done (0.0s) \
+</span><span>-- Build files have been written to: /devuser/build \
+</span><span>[ 50%] Building CXX object CMakeFiles/01_intro.dir/hello.cpp.o \
+</span><span>[100%] Linking CXX executable 01_intro \
+</span><span>[100%] Built target 01_intro 
 </span></code></pre>
+<p><code>Hello, World! </code></p>
 
 </body>
 </html>
