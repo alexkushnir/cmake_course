@@ -25,7 +25,8 @@ Let's get started!
 ---
 
 # Setup the environment
-When I was preparing the workshop, I wrote the supporting code in VSCode with WSL plugin installed, I worked with WSL, CMake 3.28 and gcc 14.2. Below is the command I had to run to install all needed packages.
+When I was preparing the workshop, I wrote the supporting code in VSCode with WSL plugin installed, I worked with WSL, CMake 3.28 and gcc 14.2. 
+
 - OS - I was using Ubuntu inside WSL container, but most of the examples are OS-agnostic (there are some examples that demonstrate working cross-platform or platform-specific tweaks).
 - Packages needed - can be taken from the Dockerfile, it is the same list. Pay attention that the "universe" apt repository should be added in order to install gcc-14
 - IDE - I used VSCode with WSL plugin installed 
