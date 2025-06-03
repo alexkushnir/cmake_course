@@ -1,11 +1,9 @@
 cmake_minimum_required(VERSION 3.28)
 set(CMAKE_PROJECT_TOP_LEVEL_INCLUDES ${CMAKE_SOURCE_DIR}/conan_provider.cmake)
-project(json_parser LANGUAGES CXX)
+project(json_parser)
 
 set(CMAKE_CXX_STANDARD 23)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
-
-set(CMAKE_PROJECT_TOP_LEVEL_INCLUDES ${CMAKE_SOURCE_DIR}/02_conan_cmake_integration/conan_provider.cmake)
 
 find_package(nlohmann_json REQUIRED)
 add_executable(json_parser Main.cpp)
