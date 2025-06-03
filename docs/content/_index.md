@@ -105,6 +105,7 @@ This image contains all necessary tools pre-installed.
 
 Try the following simple exercise to test your setup:
 After logging in, type the following:\
+``` git checkout work-in-progress # Temporary, in the end will move to the master branch``` 
 ```cmake -S 01_intro/ -B build && cmake --build build && build/01_intro```
 
 If everything is fine, you should see something like that: \
