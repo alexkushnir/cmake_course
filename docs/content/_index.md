@@ -36,7 +36,7 @@ When I was preparing the workshop, I wrote the supporting code in VSCode with WS
 ## Packages to install 
 
 - Update the packages index on your system by running sudo apt-get update
-- Install the following packages (```apt-get install -y ...```)
+- Install the following packages (`apt-get install -y ...`)
 ```
 	- wget 
 	- ca-certificates 
