@@ -65,9 +65,10 @@ When I was preparing the workshop, I wrote the supporting code in VSCode with WS
 	- graphviz 
 	- cppcheck 
 	- libboost-all-dev 
-	- libpqxx-dev ```
+	- libpqxx-dev
+```
 
-	Full command:
+Full command:
  `sudo apt-get update && apt-get install --no-install-recommends -y wget ca-certificates gnupg2 software-properties-common build-essential vim zsh tree git lcov gawk file gdb python-is-python3 python3-pip pipx g++ make ninja-build cmake gcc-13-arm-linux-gnueabi g++-13-arm-linux-gnueabi pkg-config valgrind doxygen graphviz cppcheck libboost-all-dev libpqxx-dev`
 	
 - Add the "universe" apt repository by typing `add-apt-repository universe`
