@@ -112,25 +112,25 @@ After logging in, type the following:\
 ` git checkout work-in-progress # Temporary, in the end will move to the master branch` \
 `cmake -S 01_intro/ -B build && cmake --build build && build/01_intro`
 
-If everything is fine, you should see something like that: \
+If everything is fine, you should see something like that: 
 ```
--- The C compiler identification is GNU 14.2.0 \
--- The CXX compiler identification is GNU 14.2.0 \
--- Detecting C compiler ABI info \
--- Detecting C compiler ABI info - done\
--- Check for working C compiler: /usr/bin/cc - skipped \
--- Detecting C compile features \
--- Detecting C compile features - done \
--- Detecting CXX compiler ABI info \
--- Detecting CXX compiler ABI info - done \
--- Check for working CXX compiler: /usr/bin/c++ - skipped \
--- Detecting CXX compile features \
--- Detecting CXX compile features - done \
--- Configuring done (0.5s) \
--- Generating done (0.0s) \
--- Build files have been written to: /devuser/build \
+-- The C compiler identification is GNU 14.2.0 
+-- The CXX compiler identification is GNU 14.2.0 
+-- Detecting C compiler ABI info 
+-- Detecting C compiler ABI info - done
+-- Check for working C compiler: /usr/bin/cc - skipped 
+-- Detecting C compile features 
+-- Detecting C compile features - done 
+-- Detecting CXX compiler ABI info 
+-- Detecting CXX compiler ABI info - done 
+-- Check for working CXX compiler: /usr/bin/c++ - skipped 
+-- Detecting CXX compile features 
+-- Detecting CXX compile features - done 
+-- Configuring done (0.5s) 
+-- Generating done (0.0s) 
+-- Build files have been written to: /devuser/build 
 [ 50%] Building CXX object CMakeFiles/01_intro.dir/hello.cpp.o \
-[100%] Linking CXX executable 01_intro \
+[100%] Linking CXX executable 01_intro 
 [100%] Built target 01_intro 
  ```
 `Hello, World! `
