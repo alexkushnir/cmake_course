@@ -65,8 +65,7 @@ When I was preparing the workshop, I wrote the supporting code in VSCode with WS
 	- graphviz 
 	- cppcheck 
 	- libboost-all-dev 
-	- libpqxx-dev
- ```
+	- libpqxx-dev ```
 
 	Full command:
  `sudo apt-get update && apt-get install --no-install-recommends -y wget ca-certificates gnupg2 software-properties-common build-essential vim zsh tree git lcov gawk file gdb python-is-python3 python3-pip pipx g++ make ninja-build cmake gcc-13-arm-linux-gnueabi g++-13-arm-linux-gnueabi pkg-config valgrind doxygen graphviz cppcheck libboost-all-dev libpqxx-dev`
@@ -94,7 +93,7 @@ All code is stored in github repository [`https://github.com/alexkushnir/cmake_c
 
 To get started quickly, use a pre-configured docker image in one of 2 ways:
 
-- Build the image locally using the Dockerfile from the github repo - `[https://github.com/alexkushnir/cmake_course/blob/master/Dockerfile](https://github.com/alexkushnir/cmake_course/blob/master/Dockerfile)`
+- Build the image locally using the Dockerfile from the github repo - [`https://github.com/alexkushnir/cmake_course/blob/master/Dockerfile`](https://github.com/alexkushnir/cmake_course/blob/master/Dockerfile)
 	- `docker build -t cmake-workshop . ` (Assuming running from the same folder where the Dockerfile is)
 	- `docker run -it --rm -v <local-dir>:/mnt cmake-workshop`
 - Pull the image from Dockerhub
