@@ -52,7 +52,9 @@ When I was preparing the workshop, I wrote the supporting code in VSCode with WS
 	- file 
 	- gdb 
 	- python-is-python3 
-	- python3-pip pipx
+	- python3-pip
+	- pipx
+	- tree
 	- g++ 
 	- make 
 	- ninja-build 
