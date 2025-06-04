@@ -2,7 +2,7 @@ FROM ubuntu:latest AS build-env
 
 RUN apt-get update && \
     apt-get install --no-install-recommends -y wget ca-certificates gnupg2 software-properties-common \
-    build-essential vim zsh tree git lcov gawk file gdb python-is-python3 python3-pip pipx\
+    build-essential vim zsh tree git lcov gawk file gdb python-is-python3 python3-pip pipx tree\
     g++ make ninja-build cmake\
     gcc-13-arm-linux-gnueabi g++-13-arm-linux-gnueabi \
     pkg-config valgrind doxygen graphviz cppcheck \
