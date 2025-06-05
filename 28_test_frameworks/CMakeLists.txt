@@ -1,3 +1,4 @@
+# ctest --build-and-test 28_test_frameworks/ build --build-generator Ninja --test-command ctest --test-dir bin
 cmake_minimum_required(VERSION 3.28)
 
 set(CMAKE_CXX_STANDARD 23)
