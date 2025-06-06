@@ -7,5 +7,4 @@ set(CMAKE_CXX_EXTENSIONS OFF)
 
 project(test_frameworks)
 
-# add_subdirectory(test bin)  
 add_subdirectory(test)  
