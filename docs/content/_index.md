@@ -59,6 +59,7 @@ When I was preparing the workshop, I wrote the supporting code in VSCode with WS
 	- make 
 	- ninja-build 
 	- cmake
+	- clang-format
 	- gcc-13-arm-linux-gnueabi 
 	- g++-13-arm-linux-gnueabi 
 	- pkg-config 
