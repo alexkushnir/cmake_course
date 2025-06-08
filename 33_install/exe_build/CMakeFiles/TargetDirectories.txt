@@ -1,3 +1,0 @@
-/home/alex/cmake_course/install_targets/exe_build/CMakeFiles/main_static.dir
-/home/alex/cmake_course/install_targets/exe_build/CMakeFiles/edit_cache.dir
-/home/alex/cmake_course/install_targets/exe_build/CMakeFiles/rebuild_cache.dir

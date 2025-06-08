@@ -1,1 +1,0 @@
-/usr/bin/c++ CMakeFiles/main_static.dir/MainStatic.cpp.o -o main_static  -lstatic 
