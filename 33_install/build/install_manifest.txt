@@ -1,0 +1,2 @@
+/usr/local/lib/libstatic.a
+/usr/local/include/static_library.h

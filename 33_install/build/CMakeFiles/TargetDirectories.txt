@@ -1,0 +1,8 @@
+/home/alex/cmake_course/install_targets/build/CMakeFiles/static.dir
+/home/alex/cmake_course/install_targets/build/CMakeFiles/shared.dir
+/home/alex/cmake_course/install_targets/build/CMakeFiles/edit_cache.dir
+/home/alex/cmake_course/install_targets/build/CMakeFiles/rebuild_cache.dir
+/home/alex/cmake_course/install_targets/build/CMakeFiles/list_install_components.dir
+/home/alex/cmake_course/install_targets/build/CMakeFiles/install.dir
+/home/alex/cmake_course/install_targets/build/CMakeFiles/install/local.dir
+/home/alex/cmake_course/install_targets/build/CMakeFiles/install/strip.dir
