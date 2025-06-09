@@ -1,4 +1,4 @@
-#include <static_library.h>
+#include <staticlib/static_library.h>
 
 int main()
 {
