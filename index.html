@@ -6,25 +6,11 @@
 </head>
 <body>
     <h1 id="about-me">About Me</h1>
-<h1 id="hi-i-m-alex-kushnir-and-i-will-be-guiding-you-through-this-cmake-workshop-this-page-will-help-you-to-get-ready-for-our-time-together-and-will-save-us-time-to-talk-about-really-important-things-let-s-get-started">Hi! I'm Alex Kushnir, and I will be guiding you through this CMake workshop. This page will help you to get ready for our time together and will save us time to talk about really important things!
-Let's get started!</h1>
+<p>Hi! I'm Alex Kushnir, and I will be guiding you through this CMake workshop. This page will help you to get ready for our time together and will save us time to talk about really important things!
+Let's get started!</p>
+<hr />
 <h1 id="about-me-1">About Me</h1>
 <p>Hi! I'm Alex Kushnir, and I will be guiding you through this CMake workshop. This page will help you to get ready for our time together and will save us time to talk about really important things!</p>
-<blockquote>
-<blockquote>
-<blockquote>
-<blockquote>
-<blockquote>
-<blockquote>
-<blockquote>
-<p>work-in-progress</p>
-</blockquote>
-</blockquote>
-</blockquote>
-</blockquote>
-</blockquote>
-</blockquote>
-</blockquote>
 <hr />
 <h1 id="workshop-syllabus">Workshop Syllabus</h1>
 <ul>
@@ -41,25 +27,7 @@ Let's get started!</h1>
 </ul>
 <hr />
 <h1 id="setup-the-environment">Setup the environment</h1>
-<p>&lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD
-When I was preparing the workshop, I wrote the supporting code in VSCode with WSL plugin installed, I worked with WSL, CMake 3.28 and gcc 14.2.</p>
-<p>=======
-When I was preparing the workshop, I wrote the supporting code in VSCode with WSL plugin installed, I worked with WSL, CMake 3.28 and gcc 14.2. Below is the command I had to run to install all needed packages.</p>
-<blockquote>
-<blockquote>
-<blockquote>
-<blockquote>
-<blockquote>
-<blockquote>
-<blockquote>
-<p>work-in-progress</p>
-</blockquote>
-</blockquote>
-</blockquote>
-</blockquote>
-</blockquote>
-</blockquote>
-</blockquote>
+<p>When I was preparing the workshop, I wrote the supporting code in VSCode with WSL plugin installed, I worked with WSL, CMake 3.28 and gcc 14.2.</p>
 <ul>
 <li>OS - I was using Ubuntu inside WSL container, but most of the examples are OS-agnostic (there are some examples that demonstrate working cross-platform or platform-specific tweaks).</li>
 <li>Packages needed - can be taken from the Dockerfile, it is the same list. Pay attention that the "universe" apt repository should be added in order to install gcc-14</li>
@@ -69,14 +37,10 @@ When I was preparing the workshop, I wrote the supporting code in VSCode with WS
 </ul>
 <h2 id="packages-to-install">Packages to install</h2>
 <ul>
-<li>Update the packages index on your system by running sudo apt-get update
-&lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD</li>
+<li>Update the packages index on your system by running sudo apt-get update</li>
 <li>Install the following packages (<code>apt-get install -y ...</code>)</li>
 </ul>
-<pre style="background-color:#2b303b;color:#c0c5ce;"><code><span>=======
-</span><span>- Install the following packages (apt-get install -y ...)
-</span><span>&gt;&gt;&gt;&gt;&gt;&gt;&gt; work-in-progress
-</span><span>	- wget 
+<pre style="background-color:#2b303b;color:#c0c5ce;"><code><span>	- wget 
 </span><span>	- ca-certificates 
 </span><span>	- gnupg2 
 </span><span>	- software-properties-common 
@@ -90,13 +54,10 @@ When I was preparing the workshop, I wrote the supporting code in VSCode with WS
 </span><span>	- file 
 </span><span>	- gdb 
 </span><span>	- python-is-python3 
-</span><span>&lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD
 </span><span>	- python3-pip
 </span><span>	- pipx
 </span><span>	- tree
-</span><span>=======
 </span><span>	- python3-pip pipx
-</span><span>&gt;&gt;&gt;&gt;&gt;&gt;&gt; work-in-progress
 </span><span>	- g++ 
 </span><span>	- make 
 </span><span>	- ninja-build 
@@ -110,7 +71,6 @@ When I was preparing the workshop, I wrote the supporting code in VSCode with WS
 </span><span>	- graphviz 
 </span><span>	- cppcheck 
 </span><span>	- libboost-all-dev 
-</span><span>&lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD
 </span><span>	- libpqxx-dev
 </span></code></pre>
 <p>Full command:
@@ -145,60 +105,9 @@ Full command: <code>add-apt-repository universe &amp;&amp; apt-get update &amp;&
 </li>
 </ul>
 <h1 id="support-code-for-the-workshop">Support code for the Workshop</h1>
-<h1 id="all-code-is-stored-in-github-repository-https-github-com-alexkushnir-cmake-course">All code is stored in github repository <a href="https://github.com/alexkushnir/cmake_course"><code>https://github.com/alexkushnir/cmake_course</code></a></h1>
-<pre style="background-color:#2b303b;color:#c0c5ce;"><code><span>- libpqxx-dev 
-</span><span>
-</span><span>Full command: ```sudo apt-get update &amp;&amp; apt-get install --no-install-recommends -y wget ca-certificates gnupg2 software-properties-common build-essential vim zsh tree git lcov gawk file gdb python-is-python3 python3-pip pipx g++ make ninja-build cmake gcc-13-arm-linux-gnueabi g++-13-arm-linux-gnueabi pkg-config valgrind doxygen graphviz cppcheck libboost-all-dev libpqxx-dev```
-</span></code></pre>
-<ul>
-<li>
-<p>Add the "universe" apt repository by typing <code>add-apt-repository universe</code></p>
-</li>
-<li>
-<p>Then, update the package index by typing <code>apt-get update</code></p>
-<ul>
-<li>Install gcc-14 and g++14
-Full command: <code>add-apt-repository universe &amp;&amp; apt-get update &amp;&amp; apt-get install --no-install-recommends -y gcc-14 g++-14</code></li>
-</ul>
-</li>
-<li>
-<p>Set the default commands to point to the latest gcc and g++ versions</p>
-<ul>
-<li><code>update-alternatives --install /usr/bin/arm-linux-gnueabi-gcc arm-linux-gnueabi-gcc /usr/bin/arm-linux-gnueabi-gcc-13 10</code></li>
-<li><code>update-alternatives --install /usr/bin/arm-linux-gnueabi-g++ arm-linux-gnueabi-g++ /usr/bin/arm-linux-gnueabi-g++-13 10</code></li>
-<li><code>update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-14 10</code></li>
-<li><code>update-alternatives --install /usr/bin/g++ g++ /usr/bin/g++-14 10</code></li>
-</ul>
-</li>
-<li>
-<p>Install conan</p>
-<ul>
-<li><code>pipx install conan </code></li>
-<li><code>pipx ensurepath</code></li>
-<li><code>conan profile detect --force</code></li>
-</ul>
-</li>
-</ul>
-<h1 id="support-code-for-the-workshop-1">Support code for the Workshop</h1>
-<p>All code is stored in github repository <code>[https://github.com/alexkushnir/cmake_course](https://github.com/alexkushnir/cmake_course)</code></p>
-<blockquote>
-<blockquote>
-<blockquote>
-<blockquote>
-<blockquote>
-<blockquote>
-<blockquote>
-<p>work-in-progress</p>
-</blockquote>
-</blockquote>
-</blockquote>
-</blockquote>
-</blockquote>
-</blockquote>
-</blockquote>
+<p>All code is stored in github repository <a href="https://github.com/alexkushnir/cmake_course"><code>https://github.com/alexkushnir/cmake_course</code></a></p>
 <h1 id="docker-image-installation">Docker Image Installation</h1>
 <p>To get started quickly, use a pre-configured docker image in one of 2 ways:</p>
-<p>&lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD</p>
 <ul>
 <li>Build the image locally using the Dockerfile from the github repo - <a href="https://github.com/alexkushnir/cmake_course/blob/master/Dockerfile"><code>https://github.com/alexkushnir/cmake_course/blob/master/Dockerfile</code></a>
 <ul>
@@ -209,44 +118,15 @@ Full command: <code>add-apt-repository universe &amp;&amp; apt-get update &amp;&
 <li>Pull the image from Dockerhub
 <ul>
 <li><code>docker pull alexkushnir1/cmake-workshop:latest</code></li>
-<li><code>docker run -it --rm -v &lt;local-dir&gt;:/mnt alexkushnir1/cmake-workshop:latest</code>
-=======</li>
-</ul>
-</li>
-<li>Build the image locally using the Dockerfile from the github repo - <code>[https://github.com/alexkushnir/cmake_course/blob/master/Dockerfile](https://github.com/alexkushnir/cmake_course/blob/master/Dockerfile)</code>
-<ul>
-<li><code>docker build -t cmake-workshop . </code>(Assuming running from the same folder where the Dockerfile is)</li>
-<li><code>docker run -it --rm -v &lt;local-dir&gt;:/mnt cmake-workshop</code></li>
-</ul>
-</li>
-<li>Pull the image from Dockerhub
-<ul>
-<li><code>docker pull alexkushnir1/cmake-workshop:latest</code></li>
 <li><code>docker run -it --rm -v &lt;local-dir&gt;:/mnt alexkushnir1/cmake-workshop:latest</code></li>
 </ul>
 </li>
 </ul>
-<blockquote>
-<blockquote>
-<blockquote>
-<blockquote>
-<blockquote>
-<blockquote>
-<blockquote>
-<p>work-in-progress</p>
-</blockquote>
-</blockquote>
-</blockquote>
-</blockquote>
-</blockquote>
-</blockquote>
-</blockquote>
 <p>This image contains all necessary tools pre-installed.</p>
 <hr />
 <h1 id="simple-testing-exercise">Simple Testing Exercise</h1>
 <p>Try the following simple exercise to test your setup:
 After logging in, type the following:<br />
-&lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD
 <code> git checkout work-in-progress # Temporary, in the end will move to the master branch</code> <br />
 <code>cmake -S 01_intro/ -B build &amp;&amp; cmake --build build &amp;&amp; build/01_intro</code></p>
 <p>If everything is fine, you should see something like that:</p>
@@ -269,30 +149,7 @@ After logging in, type the following:<br />
 </span><span>[100%] Linking CXX executable 01_intro 
 </span><span>[100%] Built target 01_intro 
 </span></code></pre>
-<h1 id="hello-world"><code>Hello, World! </code></h1>
-<p><code>cmake -S 01_intro/ -B build &amp;&amp; cmake --build build &amp;&amp; build/01_intro</code></p>
-<p>If everything is fine, you should see something like that: \</p>
-<pre data-lang="-- The C compiler identification is GNU 14.2.0\" style="background-color:#2b303b;color:#c0c5ce;" class="language--- The C compiler identification is GNU 14.2.0\ "><code class="language--- The C compiler identification is GNU 14.2.0\" data-lang="-- The C compiler identification is GNU 14.2.0\"><span>-- The CXX compiler identification is GNU 14.2.0 \
-</span><span>-- Detecting C compiler ABI info \
-</span><span>-- Detecting C compiler ABI info - done\
-</span><span>-- Check for working C compiler: /usr/bin/cc - skipped \
-</span><span>-- Detecting C compile features \
-</span><span>-- Detecting C compile features - done \
-</span><span>-- Detecting CXX compiler ABI info \
-</span><span>-- Detecting CXX compiler ABI info - done \
-</span><span>-- Check for working CXX compiler: /usr/bin/c++ - skipped \
-</span><span>-- Detecting CXX compile features \
-</span><span>-- Detecting CXX compile features - done \
-</span><span>-- Configuring done (0.5s) \
-</span><span>-- Generating done (0.0s) \
-</span><span>-- Build files have been written to: /devuser/build \
-</span><span>[ 50%] Building CXX object CMakeFiles/01_intro.dir/hello.cpp.o \
-</span><span>[100%] Linking CXX executable 01_intro \
-</span><span>[100%] Built target 01_intro ```
-</span><span> 
-</span><span>```Hello, World! ```
-</span><span>
-</span></code></pre>
+<p><code>Hello, World! </code></p>
 
 </body>
 </html>
