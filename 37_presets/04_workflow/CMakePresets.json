@@ -1,0 +1,53 @@
+{
+  "version": 6,
+  "cmakeMinimumRequired": {
+    "major": 3,
+    "minor": 28,
+    "patch": 0
+  },
+  "include": [],
+  "configurePresets": [
+    {
+      "name": "configPreset",
+      "displayName": "Configure Preset",
+      "description": "Ninja generator",
+      "generator": "Ninja",
+      "binaryDir": "${sourceDir}/../build",
+      "installDir": "${sourceDir}/../build/install"
+    }
+  ],
+  "buildPresets": [
+    {
+      "name": "buildPreset",
+      "displayName": "Build Preset",
+      "description": "Four jobs",
+      "configurePreset": "configPreset",
+      "jobs": 4
+    },
+    {
+      "name": "installPreset",
+      "displayName": "Installation",
+      "targets" : "install",
+      "configurePreset": "configPreset"
+    }
+  ],
+  "workflowPresets": [
+    {
+      "name": "workflowPreset",
+      "steps": [
+        {
+          "type": "configure",
+          "name": "configPreset"
+        },
+        {
+          "type": "build",
+          "name": "buildPreset"
+        },
+        {
+          "type": "build",
+          "name": "installPreset"
+        }
+      ]
+    }
+  ]
+}
