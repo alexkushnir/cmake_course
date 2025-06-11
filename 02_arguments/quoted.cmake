@@ -1,0 +1,1 @@
+message("Escape sequence: \t After tab\n New line with backslash\\\nCurrently using CMake version ${CMAKE_VERSION}")

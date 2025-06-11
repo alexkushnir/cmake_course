@@ -1,0 +1,5 @@
+if (VAR)
+    message("VAR is defined")
+else()
+    message("VAR is undefined")
+endif()
