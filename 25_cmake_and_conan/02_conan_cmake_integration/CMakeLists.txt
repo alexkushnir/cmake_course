@@ -5,6 +5,10 @@ project(json_parser)
 set(CMAKE_CXX_STANDARD 23)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
+if (NOT CMAKE_BUILD_TYPE)
+    set(CMAKE_BUILD_TYPE Release)
+endif()
+
 find_package(nlohmann_json REQUIRED)
 add_executable(json_parser Main.cpp)
 target_link_libraries(json_parser PRIVATE nlohmann_json::nlohmann_json)
