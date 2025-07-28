@@ -1,0 +1,1 @@
+. "/home/alex/cmake_course/exercises/exercise_conan/solution/build/conan/build/Release/generators/deactivate_conanrunenv-release-x86_64.sh"

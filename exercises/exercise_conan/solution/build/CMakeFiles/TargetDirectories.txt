@@ -1,0 +1,3 @@
+/home/alex/cmake_course/exercises/exercise_conan/solution/build/CMakeFiles/filewatcher.dir
+/home/alex/cmake_course/exercises/exercise_conan/solution/build/CMakeFiles/edit_cache.dir
+/home/alex/cmake_course/exercises/exercise_conan/solution/build/CMakeFiles/rebuild_cache.dir

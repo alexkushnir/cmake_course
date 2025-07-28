@@ -1,0 +1,1 @@
+/usr/bin/c++ -O3 -DNDEBUG CMakeFiles/filewatcher.dir/Main.cpp.o CMakeFiles/filewatcher.dir/FileListener.cpp.o -o filewatcher   -L/home/alex/.conan2/p/efsw81740c0f85eb6/p/lib  -Wl,-rpath,/home/alex/.conan2/p/efsw81740c0f85eb6/p/lib /home/alex/.conan2/p/efsw81740c0f85eb6/p/lib/libefsw.a -lm -lpthread

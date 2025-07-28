@@ -1,6 +1,8 @@
 project(app)
 
-add_executable(app App.cpp)
-target_include_directories(app PUBLIC ${CMAKE_SOURCE_DIR}/advancedmath)
-target_link_directories(app PUBLIC ${CMAKE_BINARY_DIR}/advancedmath)
-target_link_libraries(app PUBLIC advancedmath)
+# Add executable target 
+
+# Add include directories of advanced math (slide 82)
+# Add link directories of advanced math (similar to -L) - google target_link_directories
+# Add link library of advanced math (similar to -l) (slide 147)
+
