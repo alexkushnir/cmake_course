@@ -8,19 +8,30 @@
 
     "configurePresets": [
     {
-        "name": "app-configure",
+        "name": "common-configure",
+        "hidden": true,
         "generator": "Ninja",
-        "binaryDir": "${sourceDir}/build/app",
+        "binaryDir": "${sourceDir}/build"
+    },
+    {
+        "name": "app-configure",
+        "inherits": "common-configure",
         "cacheVariables": {
             "BUILD_TESTS": "OFF"
         }
     },
     {
         "name": "tests-configure",
-        "generator": "Ninja",
-        "binaryDir": "${sourceDir}/build/tests",
+        "inherits": "common-configure",
         "cacheVariables": {
             "BUILD_TESTS": "ON"
+        }
+    },
+    {
+        "name": "full-configure",
+        "inherits": "common-configure",
+        "cacheVariables": {
+            "FULL_BUILD": "ON"
         }
     }
     ],
@@ -41,13 +52,32 @@
         "targets": [
             "calc-tests"
         ]
+    },
+    {
+        "name": "full-build",
+        "configurePreset": "full-configure",
+        "description": "Full build",
+        "targets": [
+            "app",
+            "calc-tests"
+        ]
     }
     ],
     "testPresets": [
     {
+            "name": "tests-common",
+            "hidden": true,
+            "description": "Run all tests using CTest"
+    },
+    {
         "name": "tests-run",
         "configurePreset": "tests-configure", 
-        "description": "Run all tests using CTest"
+        "inherits": "tests-common"
+    },
+    {
+        "name": "full-build-tests-run",
+        "configurePreset": "full-configure",
+        "inherits": "tests-common"
     }
     ],
     "workflowPresets": [
@@ -67,7 +97,7 @@
         },
         {
             "name": "tests-workflow",
-            "description": "Configure and build the tests in a single command",
+            "description": "Configure, build and run the tests in a single command",
             "steps": [
             {
                 "type": "configure",
@@ -80,6 +110,24 @@
             {
                 "type": "test",
                 "name": "tests-run"
+            }
+            ]   
+        },
+        {
+            "name": "full-workflow",
+            "description": "Configure and build application and tests, and run the tests in a single command",
+            "steps": [
+            {
+                "type": "configure",
+                "name": "full-configure"
+            },
+            {
+                "type": "build",
+                "name": "full-build"
+            },
+            {
+                "type": "test",
+                "name": "full-build-tests-run"
             }
             ]   
         }
