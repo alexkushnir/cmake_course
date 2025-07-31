@@ -1,0 +1,16 @@
+cmake_minimum_required(VERSION 3.28)
+set(CMAKE_CXX_STANDARD 23)
+project(exercise_testing)
+
+if (NOT DEFINED BUILD_TESTS)
+    set(BUILD_TESTS OFF)
+endif(NOT DEFINED BUILD_TESTS)
+
+if (NOT BUILD_TESTS)
+    add_subdirectory(app)
+    add_subdirectory(advancedmath)
+    add_subdirectory(basicmath)
+else (NOT BUILD_TESTS)
+    add_subdirectory(basicmath)
+    add_subdirectory(tests)
+endif(NOT BUILD_TESTS)

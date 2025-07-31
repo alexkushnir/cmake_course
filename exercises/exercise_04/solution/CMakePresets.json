@@ -1,0 +1,87 @@
+{
+    "version": 6,
+    "cmakeMinimumRequired": {
+        "major": 3,
+        "minor": 28,
+        "patch": 0
+    },
+
+    "configurePresets": [
+    {
+        "name": "app-configure",
+        "generator": "Ninja",
+        "binaryDir": "${sourceDir}/build/app",
+        "cacheVariables": {
+            "BUILD_TESTS": "OFF"
+        }
+    },
+    {
+        "name": "tests-configure",
+        "generator": "Ninja",
+        "binaryDir": "${sourceDir}/build/tests",
+        "cacheVariables": {
+            "BUILD_TESTS": "ON"
+        }
+    }
+    ],
+  
+    "buildPresets": [
+    {
+        "name": "app-only-build",
+        "configurePreset": "app-configure",
+        "description": "Build application only",
+        "targets": [
+            "app"
+        ]
+    },
+    {
+        "name": "tests-only-build",
+        "configurePreset": "tests-configure",
+        "description": "Build test targets only",
+        "targets": [
+            "calc-tests"
+        ]
+    }
+    ],
+    "testPresets": [
+    {
+        "name": "tests-run",
+        "configurePreset": "tests-configure", 
+        "description": "Run all tests using CTest"
+    }
+    ],
+    "workflowPresets": [
+        {
+            "name": "app-workflow",
+            "description": "Configure and build the application in a single command",
+            "steps": [
+            {
+                "type": "configure",
+                "name": "app-configure"
+            },
+            {
+                "type": "build",
+                "name": "app-only-build"
+            }
+            ]   
+        },
+        {
+            "name": "tests-workflow",
+            "description": "Configure and build the application in a single command",
+            "steps": [
+            {
+                "type": "configure",
+                "name": "tests-configure"
+            },
+            {
+                "type": "build",
+                "name": "tests-only-build"
+            },
+            {
+                "type": "test",
+                "name": "tests-run"
+            }
+            ]   
+        }
+    ]
+}
