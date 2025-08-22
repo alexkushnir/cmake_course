@@ -2,8 +2,9 @@ cmake_minimum_required(VERSION 3.10)
 
 project(CppCheckTest)
 
-set(CMAKE_CXX_CPPCHECK cppcheck)
-add_executable(CppCheckTest Main.cpp)
+find_program(CMAKE_CXX_CPPCHECK NAMES cppcheck)
+if(CMAKE_CXX_CPPCHECK)
+    list(APPEND CMAKE_CXX_CPPCHECK "--enable=warning" "--error-exitcode=1")
+endif()
 
-unset(CMAKE_CXX_CPPCHECK)
-add_executable(main Main.cpp)
+add_executable(CppCheckTest Main.cpp)
