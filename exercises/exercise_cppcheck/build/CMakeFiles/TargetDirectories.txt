@@ -1,0 +1,3 @@
+/home/alex/cmake_course/exercises/exercise_cppcheck/build/CMakeFiles/exercise_cppcheck.dir
+/home/alex/cmake_course/exercises/exercise_cppcheck/build/CMakeFiles/edit_cache.dir
+/home/alex/cmake_course/exercises/exercise_cppcheck/build/CMakeFiles/rebuild_cache.dir

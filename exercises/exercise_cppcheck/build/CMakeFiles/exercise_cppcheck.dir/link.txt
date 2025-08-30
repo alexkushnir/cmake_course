@@ -1,0 +1,1 @@
+/usr/bin/c++ CMakeFiles/exercise_cppcheck.dir/Main.cpp.o -o exercise_cppcheck 
