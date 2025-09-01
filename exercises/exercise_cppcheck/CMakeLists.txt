@@ -4,4 +4,4 @@ project(exercise_cppcheck)
 
 # Add the required snippet for running cppcheck
 
-add_executable(exercise_cppcheck Main.cpp)
+# If cppcheck finishes without errors - build the executable
